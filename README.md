@@ -46,7 +46,7 @@ Este portafolio tiene como propósito:
 ---
 
 ## 📬 Contacto
-📧 **[tu-email-aqui@example.com](mailto:emprendimiento.mcr@gmail.com)**  
+📧 **[Email](mailto:emprendimiento.mcr@gmail.com)**  
 💼 **[LinkedIn](https://www.linkedin.com/in/marta-olivares-246148224/)**  
 🌐 **[Mi portafolio online](https://tuweb.com)**  
 
