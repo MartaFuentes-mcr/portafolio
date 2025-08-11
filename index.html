@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marta Fuentes — Portfolio</title>
+  <meta name="description" content="Desarrolladora Full Stack — Blockchain, Web3 y DeFi" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .btn-gradient {
+      background: linear-gradient(90deg, #a78bfa 0%, #38bdf8 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 32px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      box-shadow: 0 2px 16px 0 #a78bfa33;
+    }
+
+    .btn-gradient:hover {
+      box-shadow: 0 4px 32px 0 #38bdf833;
+    }
+
+    .btn-soft {
+      background: #23233a;
+      color: #a78bfa;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 32px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #a78bfa;
+      border: 1px solid #a78bfa;
+      border-radius: 8px;
+      padding: 12px 32px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .chip, .pill {
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #a78bfa 0%, #38bdf8 100%);
+      color: #fff;
+      font-size: 0.95em;
+      font-weight: 500;
+      margin: 0 4px 4px 0;
+    }
+
+    .chip-ghost {
+      background: #23233a;
+      color: #a78bfa;
+      border: 1px solid #a78bfa;
+    }
+
+    .cards.three {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    .card {
+      background: #181828;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 2px 24px 0 #a78bfa22;
+      flex: 1;
+      min-width: 220px;
+      text-align: center;
+    }
+
+    .icon {
+      font-size: 2.5em;
+      margin-bottom: 16px;
+    }
+
+    .project-grid {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+      justify-content: center;
+    }
+
+    .project {
+      background: #181828;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 24px 0 #38bdf822;
+      width: 340px;
+    }
+
+    .thumb img {
+      width: 100%;
+      display: block;
+      border-bottom: 2px solid #a78bfa;
+    }
+
+    .project-body {
+      padding: 24px;
+    }
+
+    .contact-form {
+      background: #181828;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 2px 24px 0 #38bdf822;
+      max-width: 480px;
+      margin: 32px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      color: #a78bfa;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: #10101a;
+      border: 1px solid #23233a;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 4px;
+      font-size: 1em;
+      transition: border 0.2s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border: 1.5px solid #a78bfa;
+      outline: none;
+    }
+
+    .site-header, .site-footer {
+      background: #181828;
+      box-shadow: 0 2px 24px 0 #a78bfa11;
+    }
+
+    .brand-logo {
+      height: 32px;
+      margin-right: 8px;
+    }
+
+    .heart {
+      color: #a78bfa;
+    }
+
+    .top {
+      color: #a78bfa;
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-left: 16px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin: 32px 0;
+    }
+
+    .stat {
+      background: #181828;
+      border-radius: 12px;
+      padding: 24px 32px;
+      text-align: center;
+      box-shadow: 0 2px 16px 0 #a78bfa11;
+    }
+
+    .skill {
+      background: #181828;
+      color: #38bdf8;
+      border-radius: 8px;
+      padding: 12px 24px;
+      margin: 8px;
+      display: inline-block;
+      font-weight: 600;
+      box-shadow: 0 2px 16px 0 #38bdf822;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 900px) {
+      .project-grid {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+      }
+      .project {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <img src="assets/img/logo.svg" class="brand-logo" alt="MO" />
+        <span class="brand-text">Portfolio</span>
+      </a>
+      <nav class="nav">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu" class="nav-list">
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#experience">Experiencia</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="section hero" id="hero">
+      <div class="container hero-inner">
+        <div class="hero-avatar">
+          <div class="avatar-wrap">
+            <img src="assets/img/avatar.png" alt="Avatar de Marta" />
+          </div>
+        </div>
+        <div class="hero-copy">
+          <div class="chip-row">
+            <span class="chip chip-ghost">Full-Stack • Web3 • DeFi</span>
+          </div>
+          <h1>Hola, soy <span class="accent">Marta Fuentes</span></h1>
+          <p class="lead">
+            Desarrolladora Full Stack apasionada por el blockchain, la descentralización y las finanzas.
+            Creo productos limpios, auditables y listos para producción.
+          </p>
+          <div class="actions">
+            <a class="btn btn-gradient" href="contacto.html">Contactar</a>
+            <a class="btn btn-soft" href="#projects">Ver Proyectos</a>
+            <a class="btn btn-ghost" href="#" aria-disabled="true">Solicitar CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about" data-reveal>
+      <div class="container">
+        <p class="eyebrow center">Sobre mí</p>
+        <h2 class="center">Construyo con transparencia y propósito</h2>
+        <p class="center muted max-60">
+          Soy una desarrolladora full stack enfocada en soluciones descentralizadas con blockchain, inteligencia artificial y criptoeconomía.
+          Fundadora de <strong>BlockRider</strong> y <strong>CivicDAO</strong>, dos plataformas orientadas a la autonomía y la innovación social.
+        </p>
+        <div class="stats">
+          <div class="stat"><span class="v">1 año</span><span class="l">Experiencia</span></div>
+          <div class="stat"><span class="v">3+</span><span class="l">Proyectos destacados</span></div>
+          <div class="stat"><span class="v">Blockchain</span><span class="l">Especialidad</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services" data-reveal>
+      <div class="container">
+        <h2 class="center">Servicios</h2>
+        <p class="center muted max-70">Acompaño a startups y equipos a lanzar productos confiables, medibles y escalables.</p>
+        <div class="cards three services-cards">
+          <article class="card service-card">
+            <div class="service-icon" style="background:linear-gradient(135deg,#ff9800,#a78bfa);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Full-Stack" width="38" height="38" />
+            </div>
+            <h3>Aplicaciones Full-Stack</h3>
+            <p>Frontends accesibles, APIs robustas y bases de datos seguras listas para producción. Desarrollo integral con foco en experiencia de usuario y escalabilidad.</p>
+            <ul class="service-list">
+              <li>React, Next.js, Tailwind</li>
+              <li>APIs REST y GraphQL</li>
+              <li>Automatización y despliegue en Vercel</li>
+            </ul>
+          </article>
+          <article class="card service-card">
+            <div class="service-icon" style="background:linear-gradient(135deg,#38bdf8,#a78bfa);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Smart Contracts" width="38" height="38" />
+            </div>
+            <h3>Smart Contracts</h3>
+            <p>Diseño, implementación y pruebas de contratos inteligentes con foco en seguridad y auditabilidad. Integración con plataformas DeFi y DAOs.</p>
+            <ul class="service-list">
+              <li>Solidity, Hardhat</li>
+              <li>Auditoría y testing</li>
+              <li>Automatización de procesos</li>
+            </ul>
+          </article>
+          <article class="card service-card">
+            <div class="service-icon" style="background:linear-gradient(135deg,#a78bfa,#38bdf8);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/web3js/web3js-original.svg" alt="Crypto & DeFi" width="38" height="38" />
+            </div>
+            <h3>Crypto & DeFi</h3>
+            <p>Integraciones Web3, pagos, wallets y analítica on-chain para productos financieros. Experiencia en gobernanza y economía de tokens.</p>
+            <ul class="service-list">
+              <li>Web3.js, Ethers.js</li>
+              <li>Wallets y pagos cripto</li>
+              <li>DAO y gobernanza</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <style>
+        .services-cards {
+          gap: 36px;
+        }
+        .service-card {
+          position: relative;
+          padding-top: 32px;
+          padding-bottom: 32px;
+          min-width: 260px;
+          max-width: 350px;
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover {
+          transform: translateY(-6px) scale(1.03);
+          box-shadow: 0 8px 32px 0 #38bdf866;
+        }
+        .service-icon {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 18px auto;
+          box-shadow: 0 2px 16px #a78bfa33;
+        }
+        .service-card h3 {
+          color: #a78bfa;
+          margin-bottom: 10px;
+          font-size: 1.18em;
+        }
+        .service-list {
+          margin: 16px 0 0 0;
+          padding: 0;
+          list-style: none;
+        }
+        .service-list li {
+          color: #38bdf8;
+          font-size: 0.98em;
+          margin-bottom: 4px;
+          padding-left: 18px;
+          position: relative;
+        }
+        .service-list li::before {
+          content: "✔";
+          color: #a78bfa;
+          position: absolute;
+          left: 0;
+          font-size: 0.9em;
+        }
+        @media (max-width: 900px) {
+          .services-cards {
+            flex-direction: column;
+            align-items: center;
+          }
+          .service-card {
+            max-width: 100%;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects" data-reveal>
+      <div class="container">
+        <h2 class="center">Mis Proyectos</h2>
+        <div class="project-grid">
+          <article class="project">
+            <div class="thumb"><img src="assets/img/proyecto1.png" alt="BlockRider" /></div>
+            <div class="project-body">
+              <h3>BlockRider</h3>
+              <div class="chips">
+                <span class="chip">Solidity</span><span class="chip">Web3</span><span class="chip">IA</span>
+              </div>
+              <p>App de transporte descentralizado con minería de datos y economía colaborativa.</p>
+              <div class="project-actions">
+                <a class="btn btn-soft" href="#" target="_blank" rel="noopener">Demo</a>
+                <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Código</a>
+              </div>
+            </div>
+          </article>
+          <article class="project">
+            <div class="thumb"><img src="assets/img/project-2.png" alt="CivicDAO" /></div>
+            <div class="project-body">
+              <h3>CivicDAO</h3>
+              <div class="chips">
+                <span class="chip">Next.js</span><span class="chip">DAO</span><span class="chip">Blockchain</span>
+              </div>
+              <p>Presupuesto participativo automatizado con transparencia total vía smart contracts.</p>
+              <div class="project-actions">
+                <a class="btn btn-soft" href="#" target="_blank" rel="noopener">Demo</a>
+                <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Código</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills" data-reveal>
+      <div class="container">
+        <h2 class="center">Habilidades</h2>
+        <p class="center muted max-70">Tecnologías que uso a diario para construir productos escalables.</p>
+        <div class="skills-grid">
+          <div class="skill" title="HTML5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-icon" />
+            <span>HTML5</span>
+          </div>
+          <div class="skill" title="CSS3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="skill-icon" />
+            <span>CSS3</span>
+          </div>
+          <div class="skill" title="JavaScript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon" />
+            <span>JavaScript</span>
+          </div>
+          <div class="skill" title="Python">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon" />
+            <span>Python</span>
+          </div>
+          <div class="skill" title="SQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="skill-icon" />
+            <span>SQL</span>
+          </div>
+          <div class="skill" title="React">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-icon" />
+            <span>React</span>
+          </div>
+          <div class="skill" title="Solidity">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity" class="skill-icon" />
+            <span>Solidity</span>
+          </div>
+          <div class="skill" title="Git">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-icon" />
+            <span>Git</span>
+          </div>
+          <div class="skill" title="Tailwind">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind" class="skill-icon" />
+            <span>Tailwind</span>
+          </div>
+          <div class="skill" title="Vercel">
+            <img src="https://api.iconify.design/simple-icons/vercel.svg" alt="Vercel" class="skill-icon" />
+            <span>Vercel</span>
+          </div>
+        </div>
+      </div>
+      <style>
+        .skills-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
+          justify-content: center;
+          margin-top: 32px;
+        }
+        .skill {
+          background: #181828;
+          border-radius: 12px;
+          padding: 18px 22px 12px 22px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 90px;
+          box-shadow: 0 2px 16px 0 #38bdf822;
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .skill:hover {
+          transform: translateY(-4px) scale(1.07);
+          box-shadow: 0 6px 32px 0 #a78bfa44;
+        }
+        .skill-icon {
+          width: 40px;
+          height: 40px;
+          margin-bottom: 10px;
+          filter: drop-shadow(0 2px 8px #38bdf822);
+        }
+        .skill span {
+          color: #a78bfa;
+          font-weight: 600;
+          font-size: 1em;
+          letter-spacing: 0.01em;
+        }
+        @media (max-width: 600px) {
+          .skills-grid {
+            gap: 12px;
+          }
+          .skill {
+            min-width: 70px;
+            padding: 12px 8px 8px 8px;
+          }
+          .skill-icon {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience" data-reveal>
+      <div class="container">
+        <h2 class="center">Experiencia</h2>
+        <div class="timeline-experience">
+          <div class="timeline-item">
+            <div class="timeline-icon" style="background:linear-gradient(135deg,#a78bfa,#38bdf8);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg" alt="Ethereum" width="28" height="28" />
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-year">2025</span>
+              <h3>Fundadora — BlockRider</h3>
+              <p>Transporte descentralizado con incentivos cripto, IA y analítica on-chain. Lideré el desarrollo de la plataforma, la estrategia de producto y la integración blockchain.</p>
+              <div class="timeline-tags">
+                <span class="chip">Blockchain</span>
+                <span class="chip">IA</span>
+                <span class="chip">Liderazgo</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon" style="background:linear-gradient(135deg,#38bdf8,#a78bfa);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="28" height="28" />
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-year">2025</span>
+              <h3>Fundadora — CivicDAO</h3>
+              <p>Presupuestos participativos automatizados y trazabilidad total vía smart contracts. Diseño, desarrollo y lanzamiento de la DAO y su plataforma de gobernanza.</p>
+              <div class="timeline-tags">
+                <span class="chip">DAO</span>
+                <span class="chip">Smart Contracts</span>
+                <span class="chip">Gobernanza</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="availability">
+          <span class="chip chip-ghost">Abierta a colaboraciones y consultorías</span>
+        </div>
+      </div>
+      <style>
+        .timeline-experience {
+          display: flex;
+          flex-direction: column;
+          gap: 36px;
+          margin: 40px 0 24px 0;
+          position: relative;
+        }
+        .timeline-experience::before {
+          content: "";
+          position: absolute;
+          left: 32px;
+          top: 0;
+          bottom: 0;
+          width: 3px;
+          background: linear-gradient(180deg,#a78bfa 0%,#38bdf8 100%);
+          opacity: 0.18;
+        }
+        .timeline-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 24px;
+          position: relative;
+        }
+        .timeline-icon {
+          min-width: 56px;
+          min-height: 56px;
+          max-width: 56px;
+          max-height: 56px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 16px #a78bfa33;
+          margin-top: 0;
+          z-index: 1;
+        }
+        .timeline-content {
+          background: #181828;
+          border-radius: 12px;
+          padding: 18px 24px;
+          box-shadow: 0 2px 16px #38bdf822;
+          flex: 1;
+        }
+        .timeline-year {
+          font-size: 1.1em;
+          color: #38bdf8;
+          font-weight: 700;
+          letter-spacing: 0.03em;
+        }
+        .timeline-content h3 {
+          margin: 6px 0 8px 0;
+          color: #a78bfa;
+          font-size: 1.18em;
+        }
+        .timeline-content p {
+          color: #b3b3c6;
+          margin-bottom: 10px;
+        }
+        .timeline-tags {
+          margin-top: 6px;
+        }
+        @media (max-width: 700px) {
+          .timeline-experience::before {
+            left: 16px;
+          }
+          .timeline-item {
+            gap: 14px;
+          }
+          .timeline-icon {
+            min-width: 38px;
+            min-height: 38px;
+            max-width: 38px;
+            max-height: 38px;
+          }
+          .timeline-content {
+            padding: 12px 12px;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" data-reveal>
+      <div class="container">
+        <h2 class="center">Contacto</h2>
+        <p class="center muted">¿Quieres colaborar conmigo? Escríbeme o sígueme en redes.</p>
+        <div class="cta-row" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <a class="pill" href="https://github.com/MartaFuentes-mcr" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width:20px;vertical-align:middle;margin-right:6px;">GitHub
+          </a>
+          <a class="pill" href="mailto:marta.olivares@example.com">
+            <img src="https://api.iconify.design/material-symbols/mail-outline.svg" alt="Email" style="width:20px;vertical-align:middle;margin-right:6px;">Email
+          </a>
+          <a class="pill" href="#" target="_blank" rel="noopener">
+            <img src="https://api.iconify.design/mdi/reddit.svg" alt="Reddit" style="width:20px;vertical-align:middle;margin-right:6px;">Reddit
+          </a>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Me pondré en contacto.');" autocomplete="on">
+          <h3>Escríbeme</h3>
+          <label>
+            Nombre
+            <input type="text" name="nombre" required autocomplete="name" placeholder="Tu nombre">
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required autocomplete="email" placeholder="correo@ejemplo.com">
+          </label>
+          <label>
+            Mensaje
+            <textarea rows="5" name="mensaje" required placeholder="Cuéntame tu idea o proyecto"></textarea>
+          </label>
+          <button class="btn btn-gradient" type="submit">Enviar</button>
+        </form>
+      </div>
+      <style>
+        .contact-form h3 {
+          color: #a78bfa;
+          margin-bottom: 12px;
+          text-align: center;
+        }
+        .cta-row a.pill {
+          display: inline-flex;
+          align-items: center;
+          font-weight: 600;
+          font-size: 1em;
+          background: linear-gradient(90deg, #a78bfa 0%, #38bdf8 100%);
+          color: #fff !important;
+          border-radius: 999px;
+          padding: 8px 22px;
+          margin-bottom: 8px;
+          transition: box-shadow 0.2s, transform 0.2s;
+          box-shadow: 0 2px 12px #38bdf822;
+          text-decoration: none;
+        }
+        .cta-row a.pill:hover {
+          box-shadow: 0 4px 24px #a78bfa44;
+          transform: translateY(-2px) scale(1.04);
+        }
+        .contact-form input,
+        .contact-form textarea {
+          margin-bottom: 8px;
+        }
+      </style>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Hecho con <span class="heart">♥</span> por Marta Fuentes | <span id="year"></span></p>
+      <a class="top" href="#hero">↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

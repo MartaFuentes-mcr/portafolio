@@ -1,0 +1,331 @@
+<!-- contacto.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Marta Fuentes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #10101a;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    .about-header {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      justify-content: center;
+    }
+    .about-avatar {
+      flex: 0 0 160px;
+      text-align: center;
+    }
+    .avatar-glow {
+      display: inline-block;
+      border-radius: 50%;
+      box-shadow: 0 0 32px 8px #a78bfa55, 0 0 64px 16px #38bdf822;
+      animation: avatarGlow 2.5s infinite alternate;
+    }
+    @keyframes avatarGlow {
+      0% { box-shadow: 0 0 32px 8px #a78bfa55, 0 0 64px 16px #38bdf822; }
+      100% { box-shadow: 0 0 48px 16px #38bdf877, 0 0 80px 24px #a78bfa44; }
+    }
+    .about-content h1 {
+      font-size: 2.4rem;
+      margin: 0 0 12px 0;
+      font-weight: 700;
+    }
+    .about-content h2 {
+      font-size: 1.3rem;
+      color: #a78bfa;
+      margin: 0 0 18px 0;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .about-content p {
+      font-size: 1.15em;
+      line-height: 1.7;
+      margin-bottom: 18px;
+      color: #b3b3c6;
+    }
+    .about-list {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin: 24px 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #181828;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-weight: 600;
+      color: #a78bfa;
+      box-shadow: 0 2px 12px #38bdf822;
+      transition: background 0.2s, color 0.2s;
+    }
+    .about-list img {
+      width: 22px;
+      height: 22px;
+      filter: drop-shadow(0 2px 8px #38bdf822);
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 32px;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: #a78bfa;
+      text-decoration: underline;
+    }
+    .section {
+      margin-top: 40px;
+    }
+    .datos-contacto-grid {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .dato-contacto {
+      background: #181828;
+      border-radius: 12px;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 16px #a78bfa22;
+      min-width: 220px;
+    }
+    .dato-contacto img {
+      width: 28px;
+    }
+    .dato-contacto a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+      word-break: break-all;
+    }
+    .dato-contacto a:hover {
+      color: #a78bfa;
+      text-decoration: underline;
+    }
+    .dato-contacto div {
+      display: flex;
+      flex-direction: column;
+    }
+    .dato-contacto div div {
+      color: #a78bfa;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    /* Formulario de contacto */
+    .contact-form {
+      background: #181828;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 2px 24px 0 #38bdf822;
+      max-width: 480px;
+      margin: 40px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-form h3 {
+      color: #a78bfa;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      color: #a78bfa;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      background: #10101a;
+      border: 1px solid #23233a;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 4px;
+      font-size: 1em;
+      transition: border 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border: 1.5px solid #a78bfa;
+      outline: none;
+    }
+    .contact-form button {
+      background: linear-gradient(90deg, #a78bfa 0%, #38bdf8 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 32px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 2px 16px 0 #a78bfa33;
+      margin-top: 8px;
+    }
+    .contact-form button:hover {
+      box-shadow: 0 4px 32px 0 #38bdf833;
+      transform: translateY(-2px) scale(1.03);
+    }
+    /* Footer */
+    .site-footer {
+      background: #181828;
+      color: #b3b3c6;
+      text-align: center;
+      padding: 32px 0 12px 0;
+      margin-top: 64px;
+      font-size: 1em;
+      letter-spacing: 0.01em;
+    }
+    @media (max-width: 700px) {
+      .about-header {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .about-content h1 {
+        font-size: 2rem;
+      }
+      .datos-contacto-grid {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+      }
+      .dato-contacto {
+        width: 100%;
+        max-width: 340px;
+        justify-content: flex-start;
+      }
+      .contact-form {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="back-link">← Volver al portfolio</a>
+    </nav>
+    <div class="about-header">
+      <div class="about-avatar">
+        <div class="avatar-glow">
+          <img src="assets/img/avatar.png" alt="Avatar de Marta Fuentes" width="140" height="140" style="border-radius:50%;">
+        </div>
+      </div>
+      <div class="about-content">
+        <h2>Sobre mí</h2>
+        <h1>Marta Fuentes</h1>
+        <p>
+          ¡Hola! Soy desarrolladora Full Stack con pasión por el <strong>blockchain</strong>, la <strong>inteligencia artificial</strong> y la <strong>innovación social</strong>. Me encanta crear soluciones tecnológicas que ayuden a las personas y generen impacto real.
+        </p>
+        <p>
+          He fundado proyectos como <strong>BlockRider</strong> y <strong>CivicDAO</strong>, donde combino tecnología, comunidad y transparencia para construir plataformas abiertas y colaborativas.
+        </p>
+        <p>
+          Disfruto aprender cada día, liderar equipos multidisciplinarios y compartir conocimiento. Creo firmemente en el poder de la descentralización y el software libre para transformar el mundo.
+        </p>
+        <ul class="about-list">
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg" alt="Blockchain">
+            Blockchain
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="IA">
+            IA
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Web3">
+            Web3
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Open Source">
+            Open Source
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DATOS DE CONTACTO PERSONALES -->
+    <section class="section" id="datos-personales">
+      <h2 style="text-align:center;">Datos de contacto</h2>
+      <div class="datos-contacto-grid">
+        <div class="dato-contacto">
+          <img src="https://api.iconify.design/material-symbols/mail-outline.svg" alt="Email">
+          <div>
+            <div>Email</div>
+            <a href="mailto:emprendimiento.mcr@gmail.com">emprendimiento.mcr@gmail.com</a>
+          </div>
+        </div>
+        <div class="dato-contacto">
+          <img src="https://api.iconify.design/mdi/reddit.svg" alt="Reddit">
+          <div>
+            <div>Reddit</div>
+            <a href="https://www.reddit.com/user/DistinctPea6133/" target="_blank" rel="noopener">DistinctPea6133</a>
+          </div>
+        </div>
+        <div class="dato-contacto">
+          <img src="https://api.iconify.design/mdi/twitter.svg" alt="X">
+          <div>
+            <div>X (Twitter)</div>
+            <a href="https://x.com/CRYPTO_DeFiNFT" target="_blank" rel="noopener">@CRYPTO_DeFiNFT</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="section" id="formulario-contacto">
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Me pondré en contacto contigo pronto.');" autocomplete="on">
+        <h3>Envíame un mensaje</h3>
+        <label>
+          Nombre
+          <input type="text" name="nombre" required autocomplete="name" placeholder="Tu nombre">
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email" placeholder="correo@ejemplo.com">
+        </label>
+        <label>
+          Mensaje
+          <textarea rows="5" name="mensaje" required placeholder="Cuéntame tu idea o proyecto"></textarea>
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+  <footer class="site-footer">
+    &copy; <span id="year"></span> Marta Fuentes — Portfolio
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
